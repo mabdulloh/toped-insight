@@ -11,17 +11,17 @@ dataset = pd.read_table('util/Indonesian_Manually_Tagged_Corpus.tsv', header=Non
 counted = dataset['tags'].value_counts()
 
 #most 10 frequent tags
-print('10 most frequent tags:', counted.head(10), sep='\n')
+# print('10 most frequent tags:', counted.head(10), sep='\n')
 
 #top 10 words with NN tags
 NN_tagged = dataset[dataset['tags']=='NN']
 NN_counted = NN_tagged['words'].value_counts()
-print('\n10 most frequent words given NN tag:', NN_counted.head(10), sep='\n')
+# print('\n10 most frequent words given NN tag:', NN_counted.head(10), sep='\n')
 
 #words with multiple tags
 grouped_by_word = dataset.groupby('words')['tags'].unique()
 word_and_mt1_tags = grouped_by_word[grouped_by_word.apply(lambda x: len(x)>1)]
-print('\nWords and more than 1 tags with all tags:', word_and_mt1_tags.sample(5), sep='\n')
+# print('\nWords and more than 1 tags with all tags:', word_and_mt1_tags.sample(5), sep='\n')
 
 def c_list_of_sentences(low, sep):
     sentence = []
