@@ -1,0 +1,5 @@
+setuptools
+selenium
+undetected-chromedriver
+nltk
+pandas
